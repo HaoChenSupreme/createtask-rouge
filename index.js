@@ -65,14 +65,8 @@ const locations = [
   },
 ];
 
-function getMultipleRandom(locations, num) {
-  const shuffled = [...locations].sort(() => 0.5 - Math.random());
+const randomleft = Math.floor(Math.random() * locations.length);
+console.log(randomleft, locations[randomleft]);
 
-  return shuffled.slice(0, num);
-}
-
-
-console.log(getMultipleRandom(locations, 2));
-
-const random = Math.floor(Math.random() * locations.length);
-console.log(random, locations[random]);
+const randomright = Math.floor(Math.random() * locations.length);
+console.log(randomright, locations[randomright]);
