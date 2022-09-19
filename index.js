@@ -65,11 +65,14 @@ const locations = [
   },
 ];
 
-function getMultipleRandom(arr, num) {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
+function getMultipleRandom(locations, num) {
+  const shuffled = [...locations].sort(() => 0.5 - Math.random());
 
   return shuffled.slice(0, num);
 }
+
+
+console.log(getMultipleRandom(locations, 2));
 
 const random = Math.floor(Math.random() * locations.length);
 console.log(random, locations[random]);
