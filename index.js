@@ -1,67 +1,83 @@
 const locations = [
   {
     name: "Mountain Cave",
-    id: "lucky",
+    value: "1",
+    type: "lucky",
   },
   {
     name: "Mysterious Shack",
-    id: "lucky",
+    value: "2",
+    type: "lucky",
   },
   {
     name: "Shabby Hut",
-    id: "lucky",
+    value: "1",
+    type: "lucky",
   },
   {
     name: "Frozen Tundra",
-    id: "lucky",
+    value: "1",
+    type: "lucky",
   },
   {
     name: "Empty Dragon's den",
-    id: "lucky",
+    value: "5",
+    type: "lucky",
   },
   {
     name: "Empty Village",
-    id: "lucky",
+    value: "2",
+    type: "lucky",
   },
   {
     name: "Castle In The Sky",
-    id: "lucky",
+    value: "4",
+    type: "lucky",
   },
   {
     name: "Wheat Field",
-    id: "lucky",
+    value: "1",
+    type: "lucky",
   },
   {
     name: "Steel Tower",
-    id: "unlucky",
+    value: "-2",
+    type: "unlucky",
   },
   {
     name: "Lush Swampland",
-    id: "unlucky",
+    value: "-2",
+    type: "unlucky",
   },
   {
     name: "Desert Oasis",
-    id: "unlucky",
+    value: "-1",
+    type: "unlucky",
   },
   {
     name: "Oak Monument",
-    id: "unlucky",
+    value: "-4",
+    type: "unlucky",
   },
   {
     name: "Shipwreck",
-    id: "unlucky",
+    value: "-3",
+    type: "unlucky",
   },
   {
     name: "Primitive Village",
-    id: "unlucky",
+    value: "-5",
+    type: "unlucky",
   },
   {
     name: "Gold Palace",
-    id: "unlucky",
+    value: "-2",
+    type: "unlucky",
   },
   {
     name: "Coal Mine",
-    id: "unlucky",
+    value: "-2",
+    type: "unlucky",
   },
 ];
 
@@ -70,3 +86,14 @@ console.log(randomleft, locations[randomleft]);
 
 const randomright = Math.floor(Math.random() * locations.length);
 console.log(randomright, locations[randomright]);
+
+const DOMSelectors = {
+  left: document.getElementById("left-btn"),
+  right: document.getElementById("right-btn"),
+  leftdisplay: document.getElementById("left"),
+  rightdisplay: document.getElementById("right"),
+};
+
+DOMSelectors.left.addEventListener("click", function () {
+  return randomleft;
+});
