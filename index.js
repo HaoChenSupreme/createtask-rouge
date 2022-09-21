@@ -81,6 +81,13 @@ const locations = [
   },
 ];
 
+function shufflefunction(locations, n) {
+  const shuffled = [...locations].sort(() => Math.random() - Math.random());
+  return shuffled.slice(0, n);
+}
+
+console.log(shufflefunction(locations, 2));
+
 const randomleft = Math.floor(Math.random() * locations.length);
 console.log(randomleft, locations[randomleft]);
 
@@ -88,12 +95,15 @@ const randomright = Math.floor(Math.random() * locations.length);
 console.log(randomright, locations[randomright]);
 
 const DOMSelectors = {
-  left: document.getElementById("left-btn"),
-  right: document.getElementById("right-btn"),
+  leftbtn: document.getElementById("left-btn"),
+  rightbtn: document.getElementById("right-btn"),
+  leftname: document.getElementById("left-name"),
+  rightname: document.getElementById("right-name"),
   leftdisplay: document.getElementById("left"),
   rightdisplay: document.getElementById("right"),
 };
 
-DOMSelectors.left.addEventListener("click", function () {
-  return randomleft;
+DOMSelectors.leftbtn.addEventListener("click", function () {
+  console.log(randomleft, locations[randomleft]);
+  return randomleft, locations[randomleft];
 });
