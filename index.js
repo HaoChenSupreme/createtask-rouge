@@ -81,24 +81,28 @@ const locations = [
   },
 ];
 
+let leftplace = null;
+let lefthp = null;
+let rightplace = null;
+let righthp = null;
 
 function randomlocation(locations, n) {
-   const shuffled = [...locations].sort(() => Math.random() - Math.random());
-   const resultleft = shuffled.slice(0, n-1);
-   const resultright = shuffled.slice(1, n);
-   const leftvalue = resultleft[0].value
-   const rightvalue = resultright[0].value
-   const leftname = resultleft[0].name
-   const rightname = resultright[0].name
-   console.log(leftvalue);
-   console.log(rightvalue);
-   console.log(leftname);
-   console.log(rightname);
-   console.log(resultleft);
-   console.log(resultright);
- };
-
-
+  const shuffled = [...locations].sort(() => Math.random() - Math.random());
+  const resultleft = shuffled.slice(0, n - 1);
+  const resultright = shuffled.slice(1, n);
+  const leftvalue = resultleft[0].value;
+  const rightvalue = resultright[0].value;
+  const leftname = resultleft[0].name;
+  const rightname = resultright[0].name;
+  leftplace = leftname;
+  rightplace = rightname;
+  console.log(leftvalue);
+  console.log(rightvalue);
+  console.log(leftname);
+  console.log(rightname);
+  console.log(resultleft);
+  console.log(resultright);
+}
 
 const DOMSelectors = {
   leftbtn: document.getElementById("left-btn"),
@@ -109,17 +113,35 @@ const DOMSelectors = {
   rightdisplay: document.getElementById("right"),
 };
 
-DOMSelectors.leftbtn.addEventListener('click', function(){
+DOMSelectors.leftbtn.addEventListener("click", function () {
   const leftna = randomlocation(locations, 2);
-  console.log(leftna);
-}
-);
+  console.log(leftplace);
+  DOMSelectors.leftname.innerHTML = "";
+  DOMSelectors.leftname.insertAdjacentHTML(
+    "afterbegin",
+    `<h2 id="left-name">${leftplace}</h2>`
+  );
+  DOMSelectors.rightname.innerHTML = "";
+  DOMSelectors.rightname.insertAdjacentHTML(
+    "afterbegin",
+    `<h2 id="left-name">${rightplace}</h2>`
+  );
+});
 
-DOMSelectors.rightbtn.addEventListener('click', function(){
+DOMSelectors.rightbtn.addEventListener("click", function () {
   const rightna = randomlocation(locations, 2);
   console.log(rightna);
-}
-);
+  DOMSelectors.rightname.innerHTML = "";
+  DOMSelectors.rightname.insertAdjacentHTML(
+    "afterbegin",
+    `<h2 id="left-name">${rightplace}</h2>`
+  );
+  DOMSelectors.leftname.innerHTML = "";
+  DOMSelectors.leftname.insertAdjacentHTML(
+    "afterbegin",
+    `<h2 id="left-name">${leftplace}</h2>`
+  );
+});
 
 // function shuffleleft(locations, n) {
 //   const shuffled = [...locations].sort(() => Math.random() - Math.random());
@@ -132,7 +154,6 @@ DOMSelectors.rightbtn.addEventListener('click', function(){
 //  const resultright = shuffled.slice(0, n);
 //  console.log(resultright);
 // }
-
 
 // DOMSelectors.leftbtn.addEventListener('click', function(){
 //  const leftna = shuffleleft(locations, 2);
