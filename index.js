@@ -81,11 +81,12 @@ const locations = [
   },
 ];
 
-// function shufflefunction(locations, n) {
-//   const shuffled = [...locations].sort(() => Math.random() - Math.random());
-//   const result = shuffled.slice(0, n);
-//   console.log("result");
-// }
+
+function shufflefunction(locations, n) {
+   const shuffled = [...locations].sort(() => Math.random() - Math.random());
+   const result = shuffled.slice(0, n);
+   console.log(result);
+ }
 
 const DOMSelectors = {
   leftbtn: document.getElementById("left-btn"),
@@ -96,15 +97,18 @@ const DOMSelectors = {
   rightdisplay: document.getElementById("right"),
 };
 
-DOMSelectors.leftbtn.addEventListener(
-  "click",
+DOMSelectors.leftbtn.addEventListener('click',
   // function shufflefunction(locations, n) {
-  //   const shuffled = [...locations].sort(() => Math.random() - Math.random());
-  //   const result = shuffled.slice(0, n);
-  //   console.log(result);
-  // }
-  console.log(2341)
+  //    const shuffled = [...locations].sort(() => Math.random() - Math.random());
+  //    const result = shuffled.slice(0, n);
+  //    console.log(result);
+  //  }
+  console.log(33)
 );
 
-DOMSelectors.rightbtn.addEventListener("click", console.log(2413));
+DOMSelectors.rightbtn.addEventListener('click', function(locations, n){
+  const shuffled = [...locations].sort(() => Math.random() - Math.random());
+  const result = shuffled.slice(0, n);
+  console.log(result);
+});
 shufflefunction(locations, 2);
