@@ -11,12 +11,12 @@ const locations = [
   },
   {
     name: "Shabby Hut",
-    value: "1",
+    value: "3",
     type: "lucky",
   },
   {
     name: "Frozen Tundra",
-    value: "1",
+    value: "2",
     type: "lucky",
   },
   {
@@ -26,7 +26,7 @@ const locations = [
   },
   {
     name: "Empty Village",
-    value: "2",
+    value: "3",
     type: "lucky",
   },
   {
@@ -46,12 +46,12 @@ const locations = [
   },
   {
     name: "Lush Swampland",
-    value: "-2",
+    value: "-3",
     type: "unlucky",
   },
   {
     name: "Desert Oasis",
-    value: "-1",
+    value: "-2",
     type: "unlucky",
   },
   {
@@ -71,22 +71,32 @@ const locations = [
   },
   {
     name: "Gold Palace",
-    value: "-2",
+    value: "-1",
     type: "unlucky",
   },
   {
     name: "Coal Mine",
-    value: "-2",
+    value: "-1",
     type: "unlucky",
   },
 ];
 
 
-function shufflefunction(locations, n) {
+function randomlocation(locations, n) {
    const shuffled = [...locations].sort(() => Math.random() - Math.random());
-   const result = shuffled.slice(0, n);
-   console.log(result);
- }
+   const resultleft = shuffled.slice(0, n-1);
+   const resultright = shuffled.slice(1, n);
+   const leftvalue = resultleft[0].value
+   const rightvalue = resultright[0].value
+   const leftname = resultleft[0].name
+   const rightname = resultright[0].name
+   console.log(leftvalue);
+   console.log(rightvalue);
+   console.log(leftname);
+   console.log(rightname);
+   console.log(resultleft);
+   console.log(resultright);
+ };
 
 
 
@@ -99,23 +109,39 @@ const DOMSelectors = {
   rightdisplay: document.getElementById("right"),
 };
 
-const tom = 2;
-
 DOMSelectors.leftbtn.addEventListener('click', function(){
-  const david = shufflefunction(locations, 3);
-  console.log(david);
+  const leftna = randomlocation(locations, 2);
+  console.log(leftna);
 }
 );
 
-// function shufflefunction(locations, n) {
-  //    const shuffled = [...locations].sort(() => Math.random() - Math.random());
-  //    const result = shuffled.slice(0, n);
-  //    console.log(result);
-  //  }
+DOMSelectors.rightbtn.addEventListener('click', function(){
+  const rightna = randomlocation(locations, 2);
+  console.log(rightna);
+}
+);
 
-DOMSelectors.rightbtn.addEventListener('click', function(locations, n){
-  const shuffled = [...locations].sort(() => Math.random() - Math.random());
-  const result = shuffled.slice(0, n);
-  console.log(result);
-});
-shufflefunction(locations, 2);
+// function shuffleleft(locations, n) {
+//   const shuffled = [...locations].sort(() => Math.random() - Math.random());
+//   const resultleft = shuffled.slice(0, n);
+//   console.log(resultleft);
+// }
+
+// function shuffleright(locations, n) {
+//  const shuffled = [...locations].sort(() => Math.random() - Math.random());
+//  const resultright = shuffled.slice(0, n);
+//  console.log(resultright);
+// }
+
+
+// DOMSelectors.leftbtn.addEventListener('click', function(){
+//  const leftna = shuffleleft(locations, 2);
+//  console.log(leftna);
+// }
+// );
+
+// DOMSelectors.rightbtn.addEventListener('click', function(){
+//  const rightna = shuffleleft(locations, 2);
+//  console.log(rightna);
+// }
+// );
