@@ -88,6 +88,8 @@ function shufflefunction(locations, n) {
    console.log(result);
  }
 
+
+
 const DOMSelectors = {
   leftbtn: document.getElementById("left-btn"),
   rightbtn: document.getElementById("right-btn"),
@@ -97,8 +99,11 @@ const DOMSelectors = {
   rightdisplay: document.getElementById("right"),
 };
 
+const tom = 2;
+
 DOMSelectors.leftbtn.addEventListener('click', function(){
-  console.log('clicked');
+  const david = shufflefunction(locations, 3);
+  console.log(david);
 }
 );
 
