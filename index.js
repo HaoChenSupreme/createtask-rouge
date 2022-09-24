@@ -96,6 +96,8 @@ function randomlocation(locations, n) {
   const rightname = resultright[0].name;
   leftplace = leftname;
   rightplace = rightname;
+  lefthp = leftvalue;
+  righthp = rightvalue;
   console.log(leftvalue);
   console.log(rightvalue);
   console.log(leftname);
@@ -109,6 +111,7 @@ const DOMSelectors = {
   rightbtn: document.getElementById("right-btn"),
   leftname: document.getElementById("left-name"),
   rightname: document.getElementById("right-name"),
+  hpvalue: document.getElementById("hp"),
   leftdisplay: document.getElementById("left"),
   rightdisplay: document.getElementById("right"),
 };
@@ -126,6 +129,10 @@ DOMSelectors.leftbtn.addEventListener("click", function () {
     "afterbegin",
     `<h2 id="left-name">${rightplace}</h2>`
   );
+  DOMSelectors.hpvalue.insertAdjacentHTML(
+    "afterbegin",
+    `<h2 id="hp">${lefthp}</h2>`
+  );
 });
 
 DOMSelectors.rightbtn.addEventListener("click", function () {
@@ -140,6 +147,10 @@ DOMSelectors.rightbtn.addEventListener("click", function () {
   DOMSelectors.leftname.insertAdjacentHTML(
     "afterbegin",
     `<h2 id="left-name">${leftplace}</h2>`
+  );
+  DOMSelectors.hpvalue.insertAdjacentHTML(
+    "afterbegin",
+    `<h2 id="hp">${righthp}</h2>`
   );
 });
 
