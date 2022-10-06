@@ -1,0 +1,17 @@
+.hp-container {
+    display: flex;
+  }
+   
+  #selection{
+    display: flex;
+  }
+   
+  #left{
+    padding-right: 40px;
+  }
+   
+  #right{
+    padding-left: 40px;
+  }
+  
+  
